@@ -1,0 +1,507 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+Instale la versión más reciente de PowerShell para obtener nuevas características y mejoras. https://aka.ms/PSWindows
+
+PS C:\Users\User>
+PS C:\Users\User> \Deskop\DataV> cd..
+\Deskop\DataV> : El término '\Deskop\DataV>' no se reconoce como
+nombre de un cmdlet, función, archivo de script o programa
+ejecutable. Compruebe si escribió correctamente el nombre o, si
+incluyó una ruta de acceso, compruebe que dicha ruta es correcta e
+inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ \Deskop\DataV> cd..
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\Deskop\DataV>:Strin
+   g) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\User> \Deskop\DataV> cd ..
+\Deskop\DataV> : El término '\Deskop\DataV>' no se reconoce como
+nombre de un cmdlet, función, archivo de script o programa
+ejecutable. Compruebe si escribió correctamente el nombre o, si
+incluyó una ruta de acceso, compruebe que dicha ruta es correcta e
+inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ \Deskop\DataV> cd ..
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\Deskop\DataV>:Strin
+   g) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\User> cd .\Desktop\
+PS C:\Users\User\Desktop> \DataV\cd ..
+\DataV\cd : El término '\DataV\cd' no se reconoce como nombre de un
+cmdlet, función, archivo de script o programa ejecutable. Compruebe
+si escribió correctamente el nombre o, si incluyó una ruta de
+acceso, compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ \DataV\cd ..
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\DataV\cd:String) []
+   , CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\User\Desktop> cd .\DataV
+PS C:\Users\User\Desktop\DataV> git clone https://github.com/KECS0407/weather-data-project.git
+Cloning into 'weather-data-project'...
+remote: Enumerating objects: 10, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 10 (delta 1), reused 1 (delta 1), pack-reused 7 (from 1)
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (2/2), done.
+PS C:\Users\User\Desktop\DataV> cd .\weather-data-project\
+PS C:\Users\User\Desktop\DataV\weather-data-project> dir
+
+
+    Directorio: C:\Users\User\Desktop\DataV\weather-data-project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----     05/09/2024  02:58 p. m.           1095 LICENSE
+-a----     05/09/2024  02:58 p. m.            111 README.md
+-a----     05/09/2024  02:58 p. m.           1186 Weather-Jackson-2013.csv
+
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git branch update-weather-data
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+PS C:\Users\User\Desktop\DataV\weather-data-project> git branch
+* main
+  update-weather-data
+PS C:\Users\User\Desktop\DataV\weather-data-project> checkout update-weather-data
+checkout : El término 'checkout' no se reconoce como nombre de un cmdlet, función, archivo de script o
+programa ejecutable. Compruebe si escribió correctamente el nombre o, si incluyó una ruta de acceso,
+compruebe que dicha ruta es correcta e inténtelo de nuevo.
+En línea: 1 Carácter: 1
++ checkout update-weather-data
++ ~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (checkout:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout update-weather-data
+Switched to branch 'update-weather-data'
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch update-weather-data
+nothing to commit, working tree clean
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout update-weather-data
+Switched to branch 'update-weather-data'
+PS C:\Users\User\Desktop\DataV\weather-data-project> dir
+
+
+    Directorio: C:\Users\User\Desktop\DataV\weather-data-project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----     05/09/2024  02:58 p. m.           1095 LICENSE
+-a----     05/09/2024  02:58 p. m.            111 README.md
+-a----     05/09/2024  02:58 p. m.           1186 Weather-Jackson-2013.csv
+
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch update-weather-data
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Weather-Jackson-2013.csv
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\User\Desktop\DataV\weather-data-project> git diff.\Weather-Jackson-2013.csv
+git: 'diff.\Weather-Jackson-2013.csv' is not a git command. See 'git --help'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git remote -v
+origin  https://github.com/KECS0407/weather-data-project.git (fetch)
+origin  https://github.com/KECS0407/weather-data-project.git (push)
+PS C:\Users\User\Desktop\DataV\weather-data-project> git diff
+diff --git a/Weather-Jackson-2013.csv b/Weather-Jackson-2013.csv
+index dbe1856..0bb1f57 100644
+--- a/Weather-Jackson-2013.csv
++++ b/Weather-Jackson-2013.csv
+@@ -1,5 +1,5 @@
+ STATION,NAME,LATITUDE,LONGITUDE,ELEVATION,DATE,EVAP,PRCP,TMAX,TMIN,WDMV
+-USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.6,0,22.2,12.2,195
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.7,0,22.2,12.2,195
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/16/13,8.1,0,28.3,13.3,163
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/17/13,4.8,0,30,18.9,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/18/13,7.9,0,31.1,20,220
+@@ -10,3 +10,4 @@ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/22/13
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/23/13,7.1,0,23.9,7.8,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/24/13,13.2,33.3,25,6.7,224
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/25/13,3,1,12.2,1.1,97
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/26/13,3,1,12.2,1.1,97
+\ No newline at end of file
+PS C:\Users\User\Desktop\DataV\weather-data-project> git diff
+diff --git a/README.md b/README.md
+index e154deb..c253925 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,3 @@
+ # weather-data-project
+-Weather data repository for the Comprehensive Data Management in Agriculture course
++Weather data repository for the Data Management in Agriculture course
+
+diff --git a/Weather-Jackson-2013.csv b/Weather-Jackson-2013.csv
+index dbe1856..0bb1f57 100644
+--- a/Weather-Jackson-2013.csv
++++ b/Weather-Jackson-2013.csv
+@@ -1,5 +1,5 @@
+ STATION,NAME,LATITUDE,LONGITUDE,ELEVATION,DATE,EVAP,PRCP,TMAX,TMIN,WDMV
+-USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.6,0,22.2,12.2,195
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.7,0,22.2,12.2,195
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/16/13,8.1,0,28.3,13.3,163
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/17/13,4.8,0,30,18.9,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/18/13,7.9,0,31.1,20,220
+@@ -10,3 +10,4 @@ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/22/13
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/23/13,7.1,0,23.9,7.8,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/24/13,13.2,33.3,25,6.7,224
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/25/13,3,1,12.2,1.1,97
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/26/13,3,1,12.2,1.1,97
+\ No newline at end of file
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout
+
+Funciones de edición básicas
+============================
+Enter            AcceptLine         Aceptar la entrada o desplazarse a la siguiente línea si la entrada n...
+Shift+Enter      AddLine            Mover el cursor a la línea siguiente sin intentar ejecutar la entrada
+Backspace        BackwardDeleteChar Eliminar el carácter que se encuentra antes del cursor
+Ctrl+h           BackwardDeleteChar Eliminar el carácter que se encuentra antes del cursor
+Ctrl+Home        BackwardDeleteLine Eliminar el texto desde el cursor hasta el inicio de la línea
+Ctrl+Backspace   BackwardKillWord   Mover el texto que haya entre el inicio de la palabra actual o anteri...
+Ctrl+w           BackwardKillWord   Mover el texto que haya entre el inicio de la palabra actual o anteri...
+Ctrl+C           Copy               Copiar la región seleccionada en el portapapeles del sistema. Si no s...
+Ctrl+c           CopyOrCancelLine   Copiar el texto seleccionado en el portapapeles o, si no hay texto se...
+Ctrl+x           Cut                Eliminar la región seleccionada colocando el texto eliminado en el po...
+Delete           DeleteChar         Eliminar el carácter bajo el cursor
+Ctrl+End         ForwardDeleteLine  Eliminar el texto desde el cursor hasta el final de la línea
+Ctrl+Enter       InsertLineAbove    Inserta una nueva línea vacía encima de la línea actual sin intentar ...
+Shift+Ctrl+Enter InsertLineBelow    Inserta una nueva línea vacía debajo de la línea actual sin intentar ...
+Alt+d            KillWord           Mover el texto que haya entre el cursor y el final de la palabra actu...
+Ctrl+Delete      KillWord           Mover el texto que haya entre el cursor y el final de la palabra actu...
+Ctrl+v           Paste              Pegar texto del portapapeles del sistema
+Shift+Insert     Paste              Pegar texto del portapapeles del sistema
+Ctrl+y           Redo               Rehacer una operación de deshacer
+Escape           RevertLine         Equivale a deshacer todas las ediciones (borra la línea, excepto las ...
+Ctrl+z           Undo               Deshacer una edición anterior
+Alt+.            YankLastArg        Copiar el texto del último argumento en la entrada
+
+Funciones de movimiento del cursor
+==================================
+LeftArrow       BackwardChar    Hacer retroceder al cursor un carácter
+Ctrl+LeftArrow  BackwardWord    Mover el cursor hasta el principio de la palabra actual o anterior
+Home            BeginningOfLine Mover el cursor hasta el inicio de la línea
+End             EndOfLine       Mover el cursor hasta el final de la línea
+RightArrow      ForwardChar     Avanzar el cursor un carácter
+Ctrl+]          GotoBrace       Desplazarse a una llave coincidente
+Ctrl+RightArrow NextWord        Mover el cursor al principio de la palabra siguiente
+
+Funciones del historial
+=======================
+Alt+F7    ClearHistory          Quitar todos los elementos del historial de la línea de comandos (no el h...
+Ctrl+s    ForwardSearchHistory  Buscar hacia delante en el historial de forma interactiva
+F8        HistorySearchBackward Buscar el elemento anterior en el historial que comienza con la entrada a...
+Shift+F8  HistorySearchForward  Buscar el siguiente elemento en el historial que comienza con la entrada ...
+DownArrow NextHistory           Reemplazar la entrada por el siguiente elemento del historial
+UpArrow   PreviousHistory       Reemplazar la entrada por el elemento anterior del historial
+Ctrl+r    ReverseSearchHistory  Buscar hacia atrás en el historial de forma interactiva
+
+Funciones de finalización
+=========================
+Ctrl+@        MenuComplete        Completar la entrada si hay una sola opción de finalización; de lo cont...
+Ctrl+Spacebar MenuComplete        Completar la entrada si hay una sola opción de finalización; de lo cont...
+Tab           TabCompleteNext     Completar la entrada mediante la siguiente opción de finalización
+Shift+Tab     TabCompletePrevious Completar la entrada mediante la anterior opción de finalización
+
+Funciones varias
+================
+Ctrl+l        ClearScreen           Limpiar la pantalla y volver a dibujar la línea actual en la parte su...
+Alt+0         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+1         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+2         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+3         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+4         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+5         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+6         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+7         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+8         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+9         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+Alt+-         DigitArgument         Iniciar o acumular un argumento numérico en otras funciones
+PageDown      ScrollDisplayDown     Desplazar la pantalla hacia abajo una pantalla
+Ctrl+PageDown ScrollDisplayDownLine Desplazar la pantalla hacia abajo una línea
+PageUp        ScrollDisplayUp       Desplazar la pantalla hacia arriba una pantalla
+Ctrl+PageUp   ScrollDisplayUpLine   Desplazar la pantalla hacia arriba una línea
+Ctrl+Alt+?    ShowKeyBindings       Mostrar todos los enlaces de teclado
+Alt+?         WhatIsKey             Mostrar el enlace de teclado de la siguiente presión simultánea
+
+Funciones de selección
+======================
+Ctrl+a                SelectAll           Seleccionar la línea completa. Mueve el cursor hasta el final d...
+Shift+LeftArrow       SelectBackwardChar  Ajustar la selección actual para incluir el carácter anterior
+Shift+Home            SelectBackwardsLine Ajustar la selección actual que se incluirá desde el cursor has...
+Shift+Ctrl+LeftArrow  SelectBackwardWord  Ajustar la selección actual para incluir la palabra anterior
+Shift+RightArrow      SelectForwardChar   Ajustar la selección actual para incluir el carácter siguiente
+Shift+End             SelectLine          Ajustar la selección actual que se incluirá desde el cursor has...
+Shift+Ctrl+RightArrow SelectNextWord      Ajustar la selección actual para incluir la palabra siguiente
+
+Funciones de búsqueda
+=====================
+F3       CharacterSearch         Leer un carácter y mover el cursor a la instancia siguiente de ese carácter
+Shift+F3 CharacterSearchBackward Leer un carácter y mover el cursor a la instancia anterior de ese carácter
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout\README.md
+git: 'checkout\README.md' is not a git command. See 'git --help'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git diff
+diff --git a/README.md b/README.md
+index e154deb..c253925 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,3 @@
+ # weather-data-project
+-Weather data repository for the Comprehensive Data Management in Agriculture course
++Weather data repository for the Data Management in Agriculture course
+
+diff --git a/Weather-Jackson-2013.csv b/Weather-Jackson-2013.csv
+index dbe1856..0bb1f57 100644
+--- a/Weather-Jackson-2013.csv
++++ b/Weather-Jackson-2013.csv
+@@ -1,5 +1,5 @@
+ STATION,NAME,LATITUDE,LONGITUDE,ELEVATION,DATE,EVAP,PRCP,TMAX,TMIN,WDMV
+-USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.6,0,22.2,12.2,195
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.7,0,22.2,12.2,195
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/16/13,8.1,0,28.3,13.3,163
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/17/13,4.8,0,30,18.9,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/18/13,7.9,0,31.1,20,220
+@@ -10,3 +10,4 @@ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/22/13
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/23/13,7.1,0,23.9,7.8,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/24/13,13.2,33.3,25,6.7,224
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/25/13,3,1,12.2,1.1,97
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/26/13,3,1,12.2,1.1,97
+\ No newline at end of file
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout. \README.md
+git: 'checkout.' is not a git command. See 'git --help'.
+
+The most similar command is
+        checkout
+PS C:\Users\User\Desktop\DataV\weather-data-project> git diff
+diff --git a/README.md b/README.md
+index e154deb..c253925 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,3 @@
+ # weather-data-project
+-Weather data repository for the Comprehensive Data Management in Agriculture course
++Weather data repository for the Data Management in Agriculture course
+
+diff --git a/Weather-Jackson-2013.csv b/Weather-Jackson-2013.csv
+index dbe1856..0bb1f57 100644
+--- a/Weather-Jackson-2013.csv
++++ b/Weather-Jackson-2013.csv
+@@ -1,5 +1,5 @@
+ STATION,NAME,LATITUDE,LONGITUDE,ELEVATION,DATE,EVAP,PRCP,TMAX,TMIN,WDMV
+-USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.6,0,22.2,12.2,195
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.7,0,22.2,12.2,195
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/16/13,8.1,0,28.3,13.3,163
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/17/13,4.8,0,30,18.9,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/18/13,7.9,0,31.1,20,220
+@@ -10,3 +10,4 @@ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/22/13
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/23/13,7.1,0,23.9,7.8,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/24/13,13.2,33.3,25,6.7,224
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/25/13,3,1,12.2,1.1,97
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/26/13,3,1,12.2,1.1,97
+\ No newline at end of file
+PS C:\Users\User\Desktop\DataV\weather-data-project> git add .\Weather-Jackson-2013.csv
+PS C:\Users\User\Desktop\DataV\weather-data-project> git commit-m"Added initial weather data update"
+git: 'commit-mAdded initial weather data update' is not a git command. See 'git --help'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git commit -m "Added initial weather data update"
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'User@CARVAJAL-DESKTOP-DELL.(none)')
+PS C:\Users\User\Desktop\DataV\weather-data-project> git config --global user.name "CARVAJAL"
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch update-weather-data
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Weather-Jackson-2013.csv
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout main
+M       README.md
+M       Weather-Jackson-2013.csv
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout update-weather-data
+M       README.md
+M       Weather-Jackson-2013.csv
+Switched to branch 'update-weather-data'
+PS C:\Users\User\Desktop\DataV\weather-data-project> git push -u origin update-weather-data
+info: please complete authentication in your browser...
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'update-weather-data' on GitHub by visiting:
+remote:      https://github.com/KECS0407/weather-data-project/pull/new/update-weather-data
+remote:
+To https://github.com/KECS0407/weather-data-project.git
+ * [new branch]      update-weather-data -> update-weather-data
+branch 'update-weather-data' set up to track 'origin/update-weather-data'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git diff
+diff --git a/README.md b/README.md
+index e154deb..c253925 100644
+--- a/README.md
++++ b/README.md
+@@ -1,3 +1,3 @@
+ # weather-data-project
+-Weather data repository for the Comprehensive Data Management in Agriculture course
++Weather data repository for the Data Management in Agriculture course
+
+diff --git a/Weather-Jackson-2013.csv b/Weather-Jackson-2013.csv
+index 0bb1f57..be19603 100644
+--- a/Weather-Jackson-2013.csv
++++ b/Weather-Jackson-2013.csv
+@@ -1,12 +1,14 @@
+ STATION,NAME,LATITUDE,LONGITUDE,ELEVATION,DATE,EVAP,PRCP,TMAX,TMIN,WDMV
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/15/13,5.7,0,22.2,12.2,195
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/16/13,8.1,0,28.3,13.3,163
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/17/13,8.1,0,28.3,13.3,163
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/17/13,4.8,0,30,18.9,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/18/13,7.9,0,31.1,20,220
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/19/13,11.7,50.8,28.9,6.1,285
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/20/13,5.6,0,12.8,1.7,126
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/21/13,3.3,0,18.9,2.8,71
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/22/13,7.1,0,21.7,5.6,100
++USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/28/13,7.1,0,21.7,5.6,100
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/23/13,7.1,0,23.9,7.8,109
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/24/13,13.2,33.3,25,6.7,224
+ USC00404561,"JACKSON EXPERIMENTAL STATION, TN US",35.6213,-88.8456,121.9,4/25/13,3,1,12.2,1.1,97
+PS C:\Users\User\Desktop\DataV\weather-data-project> git commit -m "Second round.."
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'User@CARVAJAL-DESKTOP-DELL.(none)')
+PS C:\Users\User\Desktop\DataV\weather-data-project> git commit -a -m "Second round..."
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'User@CARVAJAL-DESKTOP-DELL.(none)')
+PS C:\Users\User\Desktop\DataV\weather-data-project> git congig --global user.email "carvajalk@ufl.edu"
+git: 'congig' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+PS C:\Users\User\Desktop\DataV\weather-data-project> git config --global user.email "carvajalk@ufl.edu"
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch update-weather-data
+Your branch is up to date with 'origin/update-weather-data'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Weather-Jackson-2013.csv
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   Weather-Jackson-2013.csv
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git push
+Everything up-to-date
+PS C:\Users\User\Desktop\DataV\weather-data-project> git checkout main
+M       README.md
+M       Weather-Jackson-2013.csv
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\User\Desktop\DataV\weather-data-project> dir
+
+
+    Directorio: C:\Users\User\Desktop\DataV\weather-data-project
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----     05/09/2024  02:58 p. m.           1095 LICENSE
+-a----     05/09/2024  03:13 p. m.             97 README.md
+-a----     05/09/2024  03:37 p. m.           1485 Weather-Jackson-2013.csv
+
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Weather-Jackson-2013.csv
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   Weather-Jackson-2013.csv
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git merge update-weather-data
+Already up to date.
+PS C:\Users\User\Desktop\DataV\weather-data-project> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Weather-Jackson-2013.csv
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+        modified:   Weather-Jackson-2013.csv
+
+PS C:\Users\User\Desktop\DataV\weather-data-project> git push
+Everything up-to-date
+PS C:\Users\User\Desktop\DataV\weather-data-project> git tag -a v2.0 -m "Version 2.0 of weather data"
+PS C:\Users\User\Desktop\DataV\weather-data-project> git push origin v2.0
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 175 bytes | 175.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/KECS0407/weather-data-project.git
+ * [new tag]         v2.0 -> v2.0
+PS C:\Users\User\Desktop\DataV\weather-data-project>
